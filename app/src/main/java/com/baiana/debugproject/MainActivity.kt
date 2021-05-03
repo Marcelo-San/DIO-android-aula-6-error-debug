@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private var clicksErrorBtn = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,8 +21,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setLogListeners() {
         //todo altere os logs e adicione mais possibilidade de exceptions
-        debugBTN?.setOnClickListener { Log.d("click", "Opa! cliquei no debug") }
-        errorBTN?.setOnClickListener { indexOutOfBoundTryCatch() }
+        debugBTN?.setOnClickListener {
+            Log.d("click", "Opa! cliquei no debug")
+        }
+        errorBTN?.setOnClickListener {
+            indexOutOfBoundTryCatch()
+            clicksErrorBtn++
+            Log.e("click", "Ah, cliquei no botão 'Error log'!")
+        }
         infoBTN?.setOnClickListener { Log.i("click", "Opa! cliquei no info") }
         warningBTN?.setOnClickListener { Log.w("click", "Opa! cliquei no warning") }
         verboseBTN?.setOnClickListener { Log.v("click", "Opa! cliquei no verbose") }
