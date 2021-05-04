@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         val currentThread = Thread.currentThread()
         currentThread.setUncaughtExceptionHandler { _, throwable ->
             //todo implemente aqui seu exception handler
+            val x = throwable.message
+            val cause = throwable.cause
         }
 
     }
@@ -32,13 +34,19 @@ class MainActivity : AppCompatActivity() {
             Log.d("click", "Opa! Cliquei no botão 'Debug Log' $clicksDebugBtn vezes.")
         }
         errorBTN?.setOnClickListener {
-            //indexOutOfBoundTryCatch()
-            /*clicksErrorBtn++
-            Log.e("click", "Ah, Cliquei no botão 'Error log' $clicksErrorBtn vezes!")*/
-            throw Exception()
+            indexOutOfBoundTryCatch()
+            clicksErrorBtn++
+            Log.e("click", "Ah, Cliquei no botão 'Error log' $clicksErrorBtn vezes!")
+            //throw Exception()
+            /*try {
+                val list = listOf<Int>(2, 1, 4)
+                val a = list[6]
+            } catch (e:NullPointerException){
+                val x = 0
+            }*/
         }
         infoBTN?.setOnClickListener {
-            indexOutOfBoundTryCatch()
+            //indexOutOfBoundTryCatch()
             clicksInfoBtn++
             Log.i("click", "Opa! Cliquei no botão 'Info Log' $clicksInfoBtn vezes.")
         }
@@ -59,11 +67,11 @@ class MainActivity : AppCompatActivity() {
         try {
             val list = listOf<Int>(2, 1, 4, 3, 5)
             val crashInt: Int = list[5]
-            message = "Sobrevivi ao try"
+            message = "Sobrevivi ao 'try'... Ufa! (Risos.)"
         } catch (e: IndexOutOfBoundsException) {
-            message = "entrei no catch certo :)"
+            message = "Ôpa! Entrei no 'catch' certo! =)"
         } catch (i: NullPointerException) {
-            message = "entrei no catch errado :("
+            message = "Ah, entrei no 'catch' errado!... =("
         } finally {
             inputEDT?.setText(message)
             val t = 35
