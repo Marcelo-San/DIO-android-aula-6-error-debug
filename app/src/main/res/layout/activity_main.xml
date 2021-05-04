@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
+        android:backgroundTint="#4CAF50"
         android:text="Debug log" />
 
     <Button
@@ -34,8 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@android:color/holo_green_dark"
-        android:text="Info log!" />
+        android:backgroundTint="#03A9F4"
+        android:text="Info log" />
 
     <Button
         android:id="@+id/warningBTN"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="@android:color/holo_orange_light"
-        android:text="Warning log!" />
+        android:text="Warning log" />
 
     <Button
         android:id="@+id/verboseBTN"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="@android:color/darker_gray"
-        android:text="Verbose log!" />
+        android:text="Verbose log" />
 
 
 </LinearLayout>

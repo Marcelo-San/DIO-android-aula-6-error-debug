@@ -29,27 +29,28 @@ class MainActivity : AppCompatActivity() {
         debugBTN?.setOnClickListener {
             //indexOutOfBoundTryCatch()
             clicksDebugBtn++
-            Log.d("click", "Opa! cliquei no debug")
+            Log.d("click", "Opa! Cliquei no botão 'Debug Log' $clicksDebugBtn vezes.")
         }
         errorBTN?.setOnClickListener {
             //indexOutOfBoundTryCatch()
-            clicksErrorBtn++
-            Log.e("click", "Ah, cliquei no botão 'Error log'!")
+            /*clicksErrorBtn++
+            Log.e("click", "Ah, Cliquei no botão 'Error log' $clicksErrorBtn vezes!")*/
+            throw Exception()
         }
         infoBTN?.setOnClickListener {
             indexOutOfBoundTryCatch()
             clicksInfoBtn++
-            Log.i("click", "Opa! cliquei no info")
+            Log.i("click", "Opa! Cliquei no botão 'Info Log' $clicksInfoBtn vezes.")
         }
         warningBTN?.setOnClickListener {
             //indexOutOfBoundTryCatch()
             clicksWarningBtn++
-            Log.w("click", "Opa! cliquei no warning")
+            Log.w("click", "Opa! Cliquei no botão 'Warning Log' $clicksWarningBtn vezes.")
         }
         verboseBTN?.setOnClickListener {
             //indexOutOfBoundTryCatch()
             clicksVerboseBtn++
-            Log.v("click", "Opa! cliquei no verbose")
+            Log.v("click", "Opa! Cliquei no botão 'Verbose Log' $clicksVerboseBtn vezes.")
         }
     }
 
